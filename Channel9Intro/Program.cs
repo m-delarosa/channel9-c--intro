@@ -5,6 +5,25 @@ namespace Channel9Intro
 {
     class Program
     {
+        static void Main(string[] args)
+        {
+            bool a = true;
+            int b = 10;
+            double c = 3.145;
+            char d = 'd';
+
+            string w = a.ToString();
+            string x = b.ToString();
+            string y = c.ToString();
+            string z = d.ToString();
+
+            bool e = bool.Parse(w);
+            int f = int.Parse(x);
+            double g = double.Parse(y);
+            char h = char.Parse(z);
+
+            Console.WriteLine(h);
+        }
         static void ExploreIf()
         {
             int a = 5;
@@ -41,12 +60,9 @@ namespace Channel9Intro
                 Console.WriteLine("And the first number is not greater than the second");
             }
         }
-
-        static void Main(string[] args)
+        static void FibbonaciNumbers()
         {
-            Console.WriteLine("CONSOLE RESET");
-
-            var fibonacciNumbers = new List<int> {1, 1};
+            var fibonacciNumbers = new List<int> { 1, 1 };
 
             while (fibonacciNumbers.Count <= 19)
             {
