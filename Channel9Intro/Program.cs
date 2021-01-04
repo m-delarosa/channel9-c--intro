@@ -10,6 +10,13 @@ namespace Channel9Intro
         public int age;
     }
 
+    public enum ProductCodes
+    {
+        Milk = 98348943,
+        Juice = 34034045,
+        Tea = 12345678
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -101,6 +108,25 @@ namespace Channel9Intro
             Person1.name = "Daniel"; //declaring variables?
             Person1.eyeColor = "brown";
             Person1.age = 50;
+        }
+        static void enums()
+        {
+            ProductCodes test = ProductCodes.Milk;
+            Console.WriteLine((int)test); //Outputs the productcode for Milk
+
+            int test2 = 12345678;
+            Console.WriteLine((ProductCodes)test2); //Outputs Tea
+
+            Console.WriteLine(test.ToString()); //Outputs "Milk" as a string
+
+            //Take a stirng and convert it into an enum (parsing)
+            string test3 = "Tea";
+            //Check whether or not this is going to parse before you parse the data
+            ProductCodes getParse;
+            // bool checkParse = Enum.TryParse(test3, out getParse);
+            //This no longer works for some reason, but it did in his video
+            //says there is no TryParse or Parse method in enum class.
+            Console.WriteLine(getParse);
         }
     }
 }
