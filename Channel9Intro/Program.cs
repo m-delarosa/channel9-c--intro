@@ -17,11 +17,20 @@ namespace Channel9Intro
         Tea = 12345678
     }
 
+    public enum Mood
+    {
+        Undefined,
+        Happy,
+        Sad,
+        Hungry
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-
+            //switchStatements();
+            multiDimensionalArrays();
         }
         static void ExploreIf()
         {
@@ -120,13 +129,53 @@ namespace Channel9Intro
             Console.WriteLine(test.ToString()); //Outputs "Milk" as a string
 
             //Take a stirng and convert it into an enum (parsing)
-            string test3 = "Tea";
+            //string test3 = "Tea";
             //Check whether or not this is going to parse before you parse the data
-            ProductCodes getParse;
+
+            //ProductCodes getParse;
             // bool checkParse = Enum.TryParse(test3, out getParse);
+
             //This no longer works for some reason, but it did in his video
             //says there is no TryParse or Parse method in enum class.
-            Console.WriteLine(getParse);
+            //Console.WriteLine(getParse);
+        }
+        static void switchStatements()
+        {
+            var mood = Mood.Sad;
+
+            switch (mood)
+            {
+                case Mood.Happy:
+                    Console.WriteLine("I'm glad you're happy.");
+                    break;
+
+                case Mood.Sad:
+                case Mood.Hungry:
+                    Console.WriteLine("Eat Something!");
+                    break;
+
+                default:
+                    Console.WriteLine("The mood is invalid");
+                    break;
+            }
+        }
+        static void multiDimensionalArrays()
+        {
+            //this intiializes a 2d array of 3 integer values in first column
+            //and three in the second column. 3x3 Matrix
+            var my2dArray = new int[3, 3];
+            my2dArray[0, 0] = 1;
+            my2dArray[0, 1] = 2;
+
+            //This initializes a 3d array of 5x5x5 of integers
+            var my3Darray = new int[5, 5, 5];
+
+            //How to access the value in these arrays:
+            int numAt000 = my2dArray[0, 0];
+            Console.WriteLine(numAt000);
+
+            //Remmeber arrays can hold any type, including other arrays, enums
+            //... and structs/objects
         }
     }
 }
